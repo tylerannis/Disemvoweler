@@ -19,7 +19,8 @@ namespace Disemvoweler
         {
             //empty variables to add into
             string output = "";
-            string vowelkept = "";
+            //string.Empty is the prfered wat=y to make an empty string variable
+            string vowelkept = string.Empty;
            
            
             //loop through input
@@ -28,7 +29,7 @@ namespace Disemvoweler
                 //search for vowels
                 if ("aeiouAEIOU".Contains(input[i]))
                 {
-                    vowelkept = vowelkept + input[i];
+                    vowelkept += input[i];
                 }
                     //if there is a space then do not continue through the loop, then it won't add anything to the output
                 else if (input[i] == ' ')
@@ -37,11 +38,12 @@ namespace Disemvoweler
                 }
                 else
                 {
-                    output = output + input[i];
+                    output += input[i];
                 }
             }
             Console.WriteLine("Original: " + input);
             Console.WriteLine("Disemvoweled: " + output);
+            Console.WriteLine("Vowels: " + vowelkept);
         }
     }
 }
